@@ -1,23 +1,39 @@
 import tkinter as tk
 from tkinter import ttk
 
-def calculate_sum():
-    num1 = int(entry1.get())
-    num2 = int(entry2.get())
-    osszeg = num1 + num2
-    kulonbseg = num1 - num2
-    szorzat = num1 * num2
-    hanyados = num1 / num2
+# ---------------- MŰVELETEK ---------------------------------------------
+
+def szamolas():
+    szam1 = int(entry1.get())
+    szam2 = int(entry2.get())
+    osszeg = szam1 + szam2
+    kulonbseg = szam1 - szam2
+    szorzat = szam1 * szam2
+    hanyados = szam1 / szam2
+    atlag= (szam1+szam2) /2
+
+    if szam1 % 2 == 0:
+        label5_result.config(text=f"Az első szám, ami {szam1} - PÁROS")
+    else:
+        label5_result.config(text=f"Az első szám, ami {szam1} - PÁRATLAN")
+
+    if szam2 % 2 == 0:
+        label6_result.config(text=f"A második szám, ami {szam2} - PÁROS")
+    else:
+        label6_result.config(text=f"A masodik szám, ami {szam2} - PÁRATLAN")
+
     label1_result.config(text=f"A két szám összege: {osszeg}")
     label2_result.config(text=f"A két szám különbsége: {kulonbseg}")
     label3_result.config(text=f"A két szám szorzata: {szorzat}")
     label4_result.config(text=f"A két szám hányadosa: {hanyados:.2f}")
+    label7_result.config(text=f"A két szám atlaga: {atlag:.2f}")
+
 
 #-------------------------------------------- G U I  ------------------------
 
 root = tk.Tk()
 root.title("SZÁMOLÁS")
-root.geometry("500x400")
+root.geometry("500x550")
 
 label_intro = tk.Label(root, text="Kérlek írj be két számot, majd nyomd meg a SZÁMOL gombot:")
 label_intro.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
@@ -35,7 +51,7 @@ label2.grid(row=2, column=0, padx=5, pady=5, sticky="w")
 entry2 = tk.Entry(root, width=10)
 entry2.grid(row=2, column=1, padx=5, pady=5)
 
-button = tk.Button(root, text="Számol", command=calculate_sum)
+button = tk.Button(root, text="Számol", command=szamolas)
 button.grid(row=3, column=1, pady=20)
 
 empty_label = tk.Label(root, text="", height=2)
@@ -60,8 +76,16 @@ label4_result.grid(row=9, column=0, padx=10, pady=5, sticky="w")
 separator = ttk.Separator(root, orient='horizontal')
 separator.grid(row=10, columnspan=2, sticky="ew", padx=10, pady=10)
 
+label5_result = tk.Label(root, text="")
+label5_result.grid(row=11, column=0, padx=10, pady=5, sticky="w")
 
-empty_label = tk.Label(root, text="", height=5)
-empty_label.grid(row=13, column=0, columnspan=2)
+label6_result = tk.Label(root, text="")
+label6_result.grid(row=12, column=0, padx=10, pady=5, sticky="w")
+
+label7_result = tk.Label(root, text="")
+label7_result.grid(row=13, column=0, padx=10, pady=5, sticky="w")
+
+empty_label = tk.Label(root, text=" ", height=5)
+empty_label.grid(row=14, column=0, columnspan=2)
 
 root.mainloop()

@@ -36,50 +36,51 @@ def szamolas():
     atlag= (szam1+szam2) /2
 
     if szam1 % 2 == 0:
-        label5_result.config(text=f"Az első szám, ami {szam1} - PÁROS")
+        label5_result.config(text=f"Az első szám, ami {szam1} - PÁROS",bg='DarkKhaki')
     else:
-        label5_result.config(text=f"Az első szám, ami {szam1} - PÁRATLAN")
+        label5_result.config(text=f"Az első szám, ami {szam1} - PÁRATLAN",bg='DarkKhaki')
 
     if szam2 % 2 == 0:
-        label6_result.config(text=f"A második szám, ami {szam2} - PÁROS")
+        label6_result.config(text=f"A második szám, ami {szam2} - PÁROS",bg='DarkKhaki')
     else:
-        label6_result.config(text=f"A masodik szám, ami {szam2} - PÁRATLAN")
+        label6_result.config(text=f"A masodik szám, ami {szam2} - PÁRATLAN",bg='DarkKhaki')
 
-    label1_result.config(text=f"A két szám összege: {osszeg}")
-    label2_result.config(text=f"A két szám különbsége: {kulonbseg}")
-    label3_result.config(text=f"A két szám szorzata: {szorzat}")
-    label4_result.config(text=f"A két szám hányadosa: {hanyados:.2f}")
-    label7_result.config(text=f"A két szám atlaga: {atlag:.2f}")
+    label1_result.config(text=f"A két szám összege: {osszeg}",bg='DarkKhaki')
+    label2_result.config(text=f"A két szám különbsége: {kulonbseg}",bg='DarkKhaki')
+    label3_result.config(text=f"A két szám szorzata: {szorzat}",bg='DarkKhaki')
+    label4_result.config(text=f"A két szám hányadosa: {hanyados:.2f}",bg='DarkKhaki')
+    label7_result.config(text=f"A két szám atlaga: {atlag:.2f}",bg='DarkKhaki')
 
 #---------------------------------- TÖRLÉS ---------------------------------
 def  torles():
     entry1.delete(0, tk.END)
     entry2.delete(0, tk.END)
-    label1_result.config(text=f"A két szám összege: 0 ")
-    label2_result.config(text=f"A két szám különbsége: 0")
-    label3_result.config(text=f"A két szám szorzata: 0")
-    label4_result.config(text=f"A két szám hányadosa: 0")
-    label7_result.config(text=f"A két szám atlaga: 0")
-    label5_result.config(text=f"Az első szám,  -")
-    label6_result.config(text=f"A második szám, -")
+    label1_result.config(text=f"A két szám összege: 0 ",bg='DarkKhaki')
+    label2_result.config(text=f"A két szám különbsége: 0",bg='DarkKhaki')
+    label3_result.config(text=f"A két szám szorzata: 0",bg='DarkKhaki')
+    label4_result.config(text=f"A két szám hányadosa: 0",bg='DarkKhaki')
+    label7_result.config(text=f"A két szám atlaga: 0",bg='DarkKhaki')
+    label5_result.config(text=f"Az első szám,  -",bg='DarkKhaki')
+    label6_result.config(text=f"A második szám, -",bg='DarkKhaki')
 
 #-------------------------------------------- G U I  ------------------------
 
 root = tk.Tk()
 root.title("SZÁMOLÁS")
 root.geometry("450x550")
+root.configure(bg='DarkKhaki')
 
-label_intro = tk.Label(root, text="Kérlek írj be két számot, majd nyomd meg a SZÁMOL gombot:")
+label_intro = tk.Label(root, text="Kérlek írj be két számot, majd nyomd meg a SZÁMOL gombot:",bg='DarkKhaki')
 label_intro.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
 
 
-label1 = tk.Label(root, text="Első szám:")
+label1 = tk.Label(root, text="Első szám:",bg='DarkKhaki')
 label1.grid(row=1, column=0, padx=10, pady=10, sticky="w")
 
 entry1 = tk.Entry(root, width=10)
 entry1.grid(row=1, column=1, padx=10, pady=10)
 
-label2 = tk.Label(root, text="Második szám:")
+label2 = tk.Label(root, text="Második szám:",bg='DarkKhaki')
 label2.grid(row=2, column=0, padx=5, pady=5, sticky="w")
 
 entry2 = tk.Entry(root, width=10)
@@ -91,38 +92,38 @@ button.grid(row=3, column=1, pady=20)
 button = tk.Button(root, text="Töröl", command=torles)
 button.grid(row=3, column=0, pady=20)
 
-empty_label = tk.Label(root, text="", height=2)
+empty_label = tk.Label(root, text="", height=2,bg='DarkKhaki')
 empty_label.grid(row=4, column=0, columnspan=2)
 
 separator = ttk.Separator(root, orient='horizontal')
 separator.grid(row=5, columnspan=2, sticky="ew", padx=10, pady=10)
 
-label1_result = tk.Label(root, text="")
+label1_result = tk.Label(root, text="",bg='DarkKhaki')
 label1_result.grid(row=6, column=0, padx=10, pady=5, sticky="w")
 
-label2_result = tk.Label(root, text="")
+label2_result = tk.Label(root, text="",bg='DarkKhaki')
 label2_result.grid(row=7, column=0, padx=10, pady=5, sticky="w")
 
-label3_result = tk.Label(root, text="")
+label3_result = tk.Label(root, text="",bg='DarkKhaki')
 label3_result.grid(row=8, column=0, padx=10, pady=5, sticky="w")
 
-label4_result = tk.Label(root, text="")
+label4_result = tk.Label(root, text="",bg='DarkKhaki')
 label4_result.grid(row=9, column=0, padx=10, pady=5, sticky="w")
 
 
 separator = ttk.Separator(root, orient='horizontal')
 separator.grid(row=10, columnspan=2, sticky="ew", padx=10, pady=10)
 
-label5_result = tk.Label(root, text="")
+label5_result = tk.Label(root, text="",bg='DarkKhaki')
 label5_result.grid(row=11, column=0, padx=10, pady=5, sticky="w")
 
-label6_result = tk.Label(root, text="")
+label6_result = tk.Label(root, text="",bg='DarkKhaki')
 label6_result.grid(row=12, column=0, padx=10, pady=5, sticky="w")
 
-label7_result = tk.Label(root, text="")
+label7_result = tk.Label(root, text="",bg='DarkKhaki')
 label7_result.grid(row=13, column=0, padx=10, pady=5, sticky="w")
 
-empty_label = tk.Label(root, text=" ", height=5)
+empty_label = tk.Label(root, text=" ", height=5,bg='DarkKhaki')
 empty_label.grid(row=14, column=0, columnspan=2)
 
 root.mainloop()

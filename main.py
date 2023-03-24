@@ -1,3 +1,9 @@
+'''
+NB-2023.03.22
+Különböző műveletek, grafikus felülettel
+
+'''
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -28,12 +34,23 @@ def szamolas():
     label4_result.config(text=f"A két szám hányadosa: {hanyados:.2f}")
     label7_result.config(text=f"A két szám atlaga: {atlag:.2f}")
 
+#---------------------------------- TÖRLÉS ---------------------------------
+def  torles():
+    entry1.delete(0, tk.END)
+    entry2.delete(0, tk.END)
+    label1_result.config(text=f"A két szám összege: 0 ")
+    label2_result.config(text=f"A két szám különbsége: 0")
+    label3_result.config(text=f"A két szám szorzata: 0")
+    label4_result.config(text=f"A két szám hányadosa: 0")
+    label7_result.config(text=f"A két szám atlaga: 0")
+    label5_result.config(text=f"Az első szám,  -")
+    label6_result.config(text=f"A második szám, -")
 
 #-------------------------------------------- G U I  ------------------------
 
 root = tk.Tk()
 root.title("SZÁMOLÁS")
-root.geometry("500x550")
+root.geometry("450x550")
 
 label_intro = tk.Label(root, text="Kérlek írj be két számot, majd nyomd meg a SZÁMOL gombot:")
 label_intro.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
@@ -53,6 +70,9 @@ entry2.grid(row=2, column=1, padx=5, pady=5)
 
 button = tk.Button(root, text="Számol", command=szamolas)
 button.grid(row=3, column=1, pady=20)
+
+button = tk.Button(root, text="Töröl", command=torles)
+button.grid(row=3, column=0, pady=20)
 
 empty_label = tk.Label(root, text="", height=2)
 empty_label.grid(row=4, column=0, columnspan=2)

@@ -6,10 +6,27 @@ Különböző műveletek, grafikus felülettel
 
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
 
 # ---------------- MŰVELETEK ---------------------------------------------
 
 def szamolas():
+    try:
+        szam1 = int(entry1.get())
+        szam2 = int(entry2.get())
+        result = szam1 + szam2     # ellenőrzi, hogy csak számot adtál-e meg
+
+    except ValueError:
+        messagebox.showerror("Hiba", "Kérem, csak számot adjon meg!")
+
+    if szam1 == 0:                  # ellenőrzi, hogy az egyik szám nem  nulla-e
+        messagebox.showerror("Hiba", "A megadott szám nem lehet 0, mivel nullával nem lehet osztani!")
+        return
+
+    if szam2 == 0:
+        messagebox.showerror("Hiba", "A megadott szám nem lehet 0, mivel nullával nem lehet osztani!")
+        return
+
     szam1 = int(entry1.get())
     szam2 = int(entry2.get())
     osszeg = szam1 + szam2
